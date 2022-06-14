@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Créer ses états &mdash; openMairie Framework 4.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/genindex.html" />
+    <link rel="search" title="Recherche" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" />
+    <link rel="next" title="Créer ses tests" href="utiliser_tests.html" />
+    <link rel="prev" title="Modifier la base et regénérer" href="modifier_base.html" /> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-09-13T12:58:55Z", "builder": "sphinx", "canonical_url": null, "commit": "2d74cb2e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "fr", "page": "tutorial/utiliser_assistant", "programming_language": "py", "project": "omframework", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-55505927-1", "version": "4.11"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" class="icon icon-home"> openMairie Framework 4.11
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                4.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/installation/index.html">Prérequis et installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutoriel - Créer une application</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="creer_base.html">Créer la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_generateur.html">Créer les formulaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personnaliser.html">Personnaliser son application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifier_base.html">Modifier la base et regénérer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="utiliser_assistant.html#">Créer ses états</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_assistant.html#creer-l-etat-service">Créer l’état service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_assistant.html#creer-le-sous-etat-courrier">Créer le sous-état courrier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_assistant.html#associer-le-sous-etat-courrier-a-l-etat-service">Associer le sous-état <em>courrier</em> à l’état <em>service</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_assistant.html#mettre-le-nom-et-le-prenom-de-l-emetteur-dans-le-sous-etat">Mettre le nom et le prénom de l’emetteur dans le sous-état</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_tests.html">Créer ses tests</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/index.html">Manuel d’usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/index.html">Manuel de référence</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tests_ci/index.html">Tests et Intégration Continue</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/upgrades/index.html">Historique &amp; Mises à niveau</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/rules/index.html">Règles</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tools/index.html">Outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">openMairie Framework 4.11</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutoriel - Créer une application</a> &raquo;</li>
+        
+      <li>Créer ses états</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://gitlab.com/openmairie/framework-openmairie-documentation/blob/4.9/source/tutorial/utiliser_assistant.rst" class="fa fa-gitlab"> Edit on GitLab</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creer-ses-etats">
+<span id="utiliser-assistant"></span><h1>Créer ses états<a class="headerlink" href="utiliser_assistant.html#creer-ses-etats" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Il vous est proposé de créer un état des courriers par service.</p>
+<p>Il sera utilisé dans ce chapitre l’assistant état et sous-état du générateur.</p>
+<p>Quittez le projet openCimetiere et revenez à openExemple.</p>
+<div class="section" id="creer-l-etat-service">
+<h2>Créer l’état service<a class="headerlink" href="utiliser_assistant.html#creer-l-etat-service" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons utiliser l’assistant état du générateur dans le menu :</p>
+<p><strong>Administration -&gt; Générateur</strong></p>
+<p>Dans la partie <strong>Assistants</strong>, choisir <em>Création d’état</em> puis choisir dans le select l’option service.</p>
+<p>Ensuite avec la touche <em>CTRL</em> sélectionner les champs <em>service.service</em> et <em>service.libellé</em>.</p>
+<p>Cliquer ensuite sur <em>Import service dans la base</em>.</p>
+<img alt="../_images/utilisation_12.png" src="../_images/utilisation_12.png" />
+<p>Un message apparaît : <em>service enregistré</em>.</p>
+<p>Vous avez créé un enregistrement qui a pour identifiant <em>service</em> dans
+la table <em>om_etat</em>, visible dans : <strong>Paramétrage -&gt; Editions -&gt; Etat</strong>.</p>
+<img alt="../_images/utilisation_13.png" src="../_images/utilisation_13.png" />
+<p>Vous devez rendre votre état service <em>actif</em> pour pouvoir y accéder.</p>
+</div>
+<div class="section" id="creer-le-sous-etat-courrier">
+<h2>Créer le sous-état courrier<a class="headerlink" href="utiliser_assistant.html#creer-le-sous-etat-courrier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons utiliser l’assistant sous-état du générateur dans le menu :</p>
+<p><strong>Administration -&gt; Générateur</strong></p>
+<p>Dans la partie <strong>Assistants</strong>, choisir <em>Création sous état</em> puis dans <em>Choix table</em> selectionner courrier.</p>
+<p>Surlignez les champs :
+<em>courrier.dateenvoi</em>, <em>courrier.objetcourrier</em>, <em>courrier.emetteur</em> et <em>courrier.registre</em>.</p>
+<p>Choisir <em>courrier.service</em> comme clé secondaire pour faire le lien
+avec service.</p>
+<img alt="../_images/utilisation_14.png" src="../_images/utilisation_14.png" />
+<p>En cliquant sur <em>Import courrier dans la base</em> vous créez un enregistrement
+ayant pour identifiant <em>courrier.service</em> dans la table <em>om_sousetat</em>. Cette table est visible dans :</p>
+<p><strong>Paramètrage -&gt; Sous Etat</strong></p>
+<img alt="../_images/utilisation_15.png" src="../_images/utilisation_15.png" />
+</div>
+<div class="section" id="associer-le-sous-etat-courrier-a-l-etat-service">
+<h2>Associer le sous-état <em>courrier</em> à l’état <em>service</em><a class="headerlink" href="utiliser_assistant.html#associer-le-sous-etat-courrier-a-l-etat-service" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous devez rendre d’abord votre sous-état <em>courrier.service</em> actif pour pouvoir l’associer.</p>
+<p>Allez dans l’option <strong>Sous Etat</strong> du menu <strong>Paramétrage</strong>.</p>
+<p>Recherchez le sous-état <em>courrier.service</em> et modifiez le en cochant actif (premier fieldset : <em>collectivité</em>).</p>
+<p>Il vous faut maintenant associer le sous-état <em>courrier.service</em> à l’état <em>service</em>.</p>
+<p>Allez dans l’option <strong>Etat</strong> du menu <strong>Paramétrage</strong>.</p>
+<p>Cliquez sur <em>Modifier</em> et rendre l’etat actif (cocher la case). Ensuite, dans le fieldset à déplier <em>Corps</em>, allez dans <strong>Insérer -&gt; Sous-états</strong> et selectionnez votre sous-état.</p>
+<img alt="../_images/utilisation_16.png" src="../_images/utilisation_16.png" />
+<p>Vous devez ensuite faire apparaître dans votre application (pour l’objet voulu) l’icône d’édition des PDF (en rouge sur l’image). Pour cela, dans votre fichier <em>sql/pgsql/service.inc.php</em> inserez le code suivant  :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// EDITION
+$tab_actions[&#39;left&#39;][&#39;service&#39;] = array(
+    &#39;lien&#39; =&gt; OM_ROUTE_FORM.&quot;&amp;obj=&quot;.$obj.&quot;&amp;action=102&amp;idx=&quot;,
+    &#39;id&#39; =&gt; &#39;&#39;,
+    &#39;target&#39; =&gt; &quot;_blank&quot;,
+    &#39;lib&#39; =&gt; &#39;&lt;span class=&quot;om-icon om-icon-16 om-icon-fix pdf-16&quot; title=&quot;&#39;.__(&#39;télécharger le récapitulatif au format pdf&#39;).&#39;&quot;&gt;&#39;.__(&#39;récapitulatif&#39;).&#39;&lt;/span&gt;&#39;,
+    &#39;ordre&#39; =&gt; 110,
+);
+</pre></div>
+</div>
+<p>Pour utiliser l’action définie précédemment, il faut surcharger la fonction <em>init_class_action</em>. Pour cela mettre dans <em>obj/service.class.php</em> le code suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function init_class_action(){
+        parent::init_class_action();
+        $this-&gt;class_actions[102] = array(
+            &quot;identifier&quot; =&gt; &quot;pdf-edition&quot;,
+            &quot;portlet&quot; =&gt; array(
+                &quot;type&quot; =&gt; &quot;action-blank&quot;,
+                &quot;libelle&quot; =&gt; __(&quot;récapitulatif&quot;),
+                &quot;description&quot; =&gt; __(&#39;télécharger le récapitulatif au format pdf&#39;),
+                &quot;class&quot; =&gt; &quot;pdf-16&quot;,
+                &quot;order&quot; =&gt; 30,
+            ),
+            //&quot;permission_suffix&quot; =&gt; &quot;edition&quot;,
+            &quot;view&quot; =&gt; &quot;view_pdf_edition_etat&quot;,
+            &quot;condition&quot; =&gt; array()
+        );
+}
+</pre></div>
+</div>
+<p>Ensuite, il faut génerer la vue associée à l’action créée. Pour cela, dans votre fichier <em>service.class.php</em>, ajouter la fonction suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function view_pdf_edition_etat() {
+        $this-&gt;checkAccessibility();
+        $pdfedition = $this-&gt;compute_pdf_output(
+            &#39;etat&#39;,     //etat ou lettretype
+            &#39;service&#39;,  //objet de mon etat
+            $this-&gt;f-&gt;getCollectivite(),
+            $this-&gt;id
+        );
+        $this-&gt;expose_pdf_output(
+            $pdfedition[&quot;pdf_output&quot;],
+            &quot;mon-fichier-&quot;.date(&#39;YmdHis&#39;).&quot;.pdf&quot;
+        );
+}
+</pre></div>
+</div>
+<p>Vous avez désormais un état des courriers par service (<strong>Paramétrage -&gt; Service -&gt; Edition PDF</strong>) :</p>
+<img alt="../_images/utilisation_17.png" src="../_images/utilisation_17.png" />
+<img alt="../_images/utilisation_18.png" src="../_images/utilisation_18.png" />
+</div>
+<div class="section" id="mettre-le-nom-et-le-prenom-de-l-emetteur-dans-le-sous-etat">
+<h2>Mettre le nom et le prénom de l’emetteur dans le sous-état<a class="headerlink" href="utiliser_assistant.html#mettre-le-nom-et-le-prenom-de-l-emetteur-dans-le-sous-etat" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous souhaitons mettre le nom et le prénom de l’emetteur à la place de
+la clé secondaire.</p>
+<p>Vous devez modifier la requête sql du sous-état <em>courrier.service</em>. Aller dans <strong>Paramétrage -&gt; Sous Etat</strong> et modifier la partie SQL de votre sous-état :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">courrier</span><span class="o">.</span><span class="n">dateenvoi</span> <span class="k">as</span> <span class="n">dateenvoi</span><span class="p">,</span>
+<span class="n">courrier</span><span class="o">.</span><span class="n">objetcourrier</span> <span class="k">as</span> <span class="n">objetcourrier</span><span class="p">,</span>
+<span class="n">concat</span><span class="p">(</span><span class="n">emetteur</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="n">emetteur</span><span class="o">.</span><span class="n">prenom</span><span class="p">)</span> <span class="k">as</span> <span class="n">emetteur</span><span class="p">,</span>
+<span class="n">courrier</span><span class="o">.</span><span class="n">registre</span> <span class="k">as</span> <span class="n">registre</span>
+<span class="kn">from</span> <span class="o">&amp;</span><span class="n">DB_PREFIXEcourrier</span> <span class="n">LEFT</span> <span class="n">JOIN</span> <span class="o">&amp;</span><span class="n">DB_PREFIXEemetteur</span> <span class="n">on</span> <span class="n">emetteur</span><span class="o">.</span><span class="n">emetteur</span> <span class="o">=</span> <span class="n">courrier</span><span class="o">.</span><span class="n">emetteur</span>
+<span class="n">where</span> <span class="n">courrier</span><span class="o">.</span><span class="n">service</span><span class="o">=</span><span class="s1">&#39;&amp;idx&#39;</span>
+</pre></div>
+</div>
+<img alt="../_images/utilisation_30.png" src="../_images/utilisation_30.png" />
+<p>Votre nouvel état a la forme suivante :</p>
+<img alt="../_images/utilisation_19.png" src="../_images/utilisation_19.png" />
+<p>Vous avez de nombreux exemples d’utilisation d’état et de sous-état dans
+les applications openMairie.</p>
+<p>Une utilisation originale a été faite pour le Cerfa du recensement dans
+openRecensement où à la place du logo il a été mis une image du Cerfa.</p>
+<p>On ne peut cependant pas faire tous les états et il est fort possible que vous ayez des
+états spécifiques. Vous avez des exemples d’utilisation spécifique des méthodes
+de fpdf dans openElec : carte électorale, liste électorale, …</p>
+<p>Vous pouvez compléter votre information avec le chapitre <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/edition.html#edition"><span class="std std-ref">Module “Édition”</span></a> et
+regarder les possibilités de <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/generation/parametrage_generateur.html#parametrage-generateur"><span class="std std-ref">paramétrage du générateur</span></a> pour la réalisation
+d’un état customisé.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utiliser_tests.html" class="btn btn-neutral float-right" title="Créer ses tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modifier_base.html" class="btn btn-neutral float-left" title="Modifier la base et regénérer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004-2019, openMairie
+      
+        <span class="commit">
+          Revision <code>2d74cb2e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 4.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.10/">4.10</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.9/">4.9</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.8/">4.8</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.7/">4.7</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.6/">4.6</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.5/">4.5</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.4/">4.4</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.2/">4.2</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/pdf/">pdf</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/htmlzip/">html</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/epub/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="https://readthedocs.org/projects/omframework/?fromdocs=omframework">Project Home</a>
+          </dd>
+          <dd>
+            <a href="https://readthedocs.org/builds/omframework/?fromdocs=omframework">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

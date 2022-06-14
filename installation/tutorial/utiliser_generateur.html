@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Créer les formulaires &mdash; openMairie Framework 4.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/genindex.html" />
+    <link rel="search" title="Recherche" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" />
+    <link rel="next" title="Personnaliser son application" href="personnaliser.html" />
+    <link rel="prev" title="Créer la base de données" href="creer_base.html" /> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-09-13T12:58:55Z", "builder": "sphinx", "canonical_url": null, "commit": "2d74cb2e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "fr", "page": "tutorial/utiliser_generateur", "programming_language": "py", "project": "omframework", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-55505927-1", "version": "4.11"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" class="icon icon-home"> openMairie Framework 4.11
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                4.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/installation/index.html">Prérequis et installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutoriel - Créer une application</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="creer_base.html">Créer la base de données</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="utiliser_generateur.html#">Créer les formulaires</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_generateur.html#generer-les-formulaires-et-edition-du-courrier">Générer les formulaires et édition du courrier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_generateur.html#generer-les-formulaires-et-edition-de-l-emetteur">Générer les formulaires et édition de l’emetteur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_generateur.html#generer-les-formulaires-et-edition-de-service">Générer les formulaires et édition de service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_generateur.html#integrer-les-formulaires-dans-le-menu">Intégrer les formulaires dans le menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utiliser_generateur.html#menu">Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="personnaliser.html">Personnaliser son application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifier_base.html">Modifier la base et regénérer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_assistant.html">Créer ses états</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_tests.html">Créer ses tests</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/index.html">Manuel d’usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/index.html">Manuel de référence</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tests_ci/index.html">Tests et Intégration Continue</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/upgrades/index.html">Historique &amp; Mises à niveau</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/rules/index.html">Règles</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tools/index.html">Outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">openMairie Framework 4.11</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutoriel - Créer une application</a> &raquo;</li>
+        
+      <li>Créer les formulaires</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://gitlab.com/openmairie/framework-openmairie-documentation/blob/4.9/source/tutorial/utiliser_generateur.rst" class="fa fa-gitlab"> Edit on GitLab</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creer-les-formulaires">
+<span id="utiliser-generateur"></span><h1>Créer les formulaires<a class="headerlink" href="utiliser_generateur.html#creer-les-formulaires" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Nous allons maintenant créer les formulaires à l’aide du générateur.</p>
+<p>Pour cela, il faut aller dans le menu <strong>Administration -&gt; Générateur</strong>.</p>
+<p>Vous devez avoir 3 nouveaux boutons : courrier, service et emetteur.</p>
+<img alt="../_images/utilisation_1.png" src="../_images/utilisation_1.png" />
+<p>Avant de commencer, l’utilisateur apache <strong>www-data</strong> doit avoir les droits
+d’écriture dans les repertoires <em>/gen</em> , <em>/sql</em> et <em>/obj</em>.</p>
+<div class="section" id="generer-les-formulaires-et-edition-du-courrier">
+<h2>Générer les formulaires et édition du courrier<a class="headerlink" href="utiliser_generateur.html#generer-les-formulaires-et-edition-du-courrier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En appuyant sur le bouton de courrier, vous avez les choix de génération :</p>
+<img alt="../_images/utilisation_2.png" src="../_images/utilisation_2.png" />
+<p>Au préalable, le générateur a fait une analyse de la base de données :</p>
+<img alt="../_images/utilisation_21.png" src="../_images/utilisation_21.png" />
+<p>Le générateur a donc détecté 2 clés secondaires et aucun sous-formulaire.</p>
+<p>C’est pour cela qu’il propose 3 «&nbsp;<a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/reqmo.html#reqmo"><span class="std std-ref">reqmos</span></a>&nbsp;» : 1 «&nbsp;reqmo&nbsp;» global et 2 «&nbsp;reqmos&nbsp;» suivant les clés secondaires.</p>
+<p>Par défaut, seules les options du formulaire sont cochées.</p>
+<p>Si vous le refaites plus tard, seules celles fabriquées par le générateur seront cochées.</p>
+<p>Cochez les toutes :</p>
+<img alt="../_images/utilisation_22.png" src="../_images/utilisation_22.png" />
+<p>En cliquant sur valider, vous avez le message :</p>
+<img alt="../_images/utilisation_23.png" src="../_images/utilisation_23.png" />
+<p>Le paramétrage utilisé est le paramétrage standard.</p>
+<p>Vous pouvez le modifier : voir <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/generation/parametrage_generateur.html#parametrage-generateur"><span class="std std-ref">Paramétrage générateur</span></a>.</p>
+<p>L’affichage par colonne est «&nbsp;ok&nbsp;», ce qui veut dire que la taille des colonnes
+dans le fichier pdf sera complet (attention le script ne prend pas le champ blob).</p>
+</div>
+<div class="section" id="generer-les-formulaires-et-edition-de-l-emetteur">
+<h2>Générer les formulaires et édition de l’emetteur<a class="headerlink" href="utiliser_generateur.html#generer-les-formulaires-et-edition-de-l-emetteur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons procéder de la même manière avec le bouton emetteur.</p>
+<p>L’analyse de la base de données est la suivante :</p>
+<img alt="../_images/utilisation_24.png" src="../_images/utilisation_24.png" />
+<p>Le générateur repère un sous formulaire courrier.
+Effectivement, il y a une relation de un à plusieurs entre emetteur et courrier :
+un emetteur peut avoir 0 à plusieurs courriers.</p>
+<p>En cliquant sur toutes les options puis en validant, vous avez le message suivant :</p>
+<img alt="../_images/utilisation_25.png" src="../_images/utilisation_25.png" />
+</div>
+<div class="section" id="generer-les-formulaires-et-edition-de-service">
+<h2>Générer les formulaires et édition de service<a class="headerlink" href="utiliser_generateur.html#generer-les-formulaires-et-edition-de-service" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons procéder de la même manière avec le bouton service</p>
+<p>L’analyse de la base de données est la suivante :</p>
+<img alt="../_images/utilisation_26.png" src="../_images/utilisation_26.png" />
+<p>Le générateur repère un sous formulaire courrier.
+Effectivement, il y a une relation de un à plusieurs entre service et courrier :
+un service peut avoir 0 à plusieurs courriers.</p>
+<p>En cliquant sur toutes les options, vous avez le message suivant :</p>
+<img alt="../_images/utilisation_27.png" src="../_images/utilisation_27.png" />
+</div>
+<div class="section" id="integrer-les-formulaires-dans-le-menu">
+<h2>Intégrer les formulaires dans le menu<a class="headerlink" href="utiliser_generateur.html#integrer-les-formulaires-dans-le-menu" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour accéder à nos formulaires, nous allons les intégrer dans le menu
+(voir <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/parametrage.html#parametrage-menu"><span class="std std-ref">paramètrage du menu</span></a>).</p>
+<p>Nous allons appeller le formulaire depuis le menu :</p>
+<ul class="simple">
+<li>option <strong>Application</strong> -&gt; OM_ROUTE_TAB.&nbsp;»&amp;obj=courrier&nbsp;»</li>
+<li>option <strong>Paramétrage</strong> -&gt; OM_ROUTE_TAB.&nbsp;»&amp;obj=emetteur&nbsp;»</li>
+<li>option <strong>Paramétrage</strong> -&gt; OM_ROUTE_TAB.&nbsp;»&amp;obj=service&nbsp;»</li>
+</ul>
+<p>Il faut ouvrir avec un éditeur le fichier <code class="file docutils literal notranslate"><span class="pre">app/framework_openmairie.class.php</span></code> et aller dans la partie :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">framework_openmairie</span> <span class="n">extends</span> <span class="n">application</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>Il faut ensuite surcharger la méthode set_config_menu (issue de la classe mère application présente dans <code class="file docutils literal notranslate"><span class="pre">core/om_application.class.php</span></code>) et ajouter les éléments qui nous intéressent. Pour cela, insérer le code suivant dans la fonction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>protected function set_config__menu(){
+       parent::set_config__menu();
+       $parent_menu = $this-&gt;config__menu;
+
+       // {{{ Rubrique APPLICATION
+       $rubrik = array(
+           &quot;title&quot; =&gt; __(&quot;application&quot;),
+           &quot;class&quot; =&gt;  &quot;application&quot;
+       );
+       $links = array();
+
+       $links[] = array(
+           &quot;href&quot; =&gt; OM_ROUTE_TAB.&quot;&amp;obj=courrier&quot;,
+           &quot;class&quot; =&gt; &quot;courrier&quot;,
+           &quot;title&quot; =&gt; _(&quot;courrier&quot;),
+           &quot;right&quot; =&gt; &quot;courrier&quot;,
+           &quot;open&quot; =&gt; array(
+               &quot;tab.php|courrier&quot;,
+               &quot;index.php|courrier[module=tab]&quot;,
+               &quot;form.php|courrier&quot;,
+               &quot;index.php|courrier[module=form]&quot;,
+           ),
+       );
+
+       $rubrik[&#39;links&#39;] = $links;
+       $menu[] = $rubrik;
+       // }}}
+
+       // {{{ Rubrique PARAMETRAGE METIER
+       $rubrik = array(
+               &quot;title&quot; =&gt; _(&quot;parametrage metier&quot;),
+               &quot;class&quot; =&gt; &quot;parametrage&quot;,
+       );
+       $links = array();
+
+       $links[] = array(
+           &quot;href&quot; =&gt; OM_ROUTE_TAB.&quot;&amp;obj=emetteur&quot;,
+           &quot;class&quot; =&gt; &quot;emetteur&quot;,
+           &quot;title&quot; =&gt; _(&quot;emetteur&quot;),
+           &quot;right&quot; =&gt; &quot;emetteur&quot;,
+           &quot;open&quot; =&gt; array(
+               &quot;tab.php|emetteur&quot;,
+               &quot;index.php|emetteur[module=tab]&quot;,
+               &quot;form.php|emetteur&quot;,
+               &quot;index.php|emetteur[module=form]&quot;,
+           ),
+       );
+
+       $links[] = array(
+           &quot;href&quot; =&gt; OM_ROUTE_TAB.&quot;&amp;obj=service&quot;,
+           &quot;class&quot; =&gt; &quot;service&quot;,
+           &quot;title&quot; =&gt; _(&quot;service&quot;),
+           &quot;right&quot; =&gt; &quot;service&quot;,
+           &quot;open&quot; =&gt; array(
+               &quot;tab.php|service&quot;,
+               &quot;index.php|service[module=tab]&quot;,
+               &quot;form.php|service&quot;,
+               &quot;index.php|service[module=form]&quot;,
+           ),
+       );
+
+       $rubrik[&#39;links&#39;] = $links;
+       $menu[] = $rubrik;
+       // }}}
+
+       $this-&gt;config__menu = array_merge(
+               $menu,
+               $parent_menu
+       );
+   }
+</pre></div>
+</div>
+<p>Enfin, pour y accéder, il faut soit donner les droits via le menu framework, soit les donner
+(et c’est en l’occurrence le cas) dans le fichier <code class="file docutils literal notranslate"><span class="pre">dyn/config.inc.php</span></code> (option
+utilisée que pour le développement). Pour cela créer le fichier <code class="file docutils literal notranslate"><span class="pre">dyn/config.inc.php</span></code> et ajouter la ligne</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$config[&#39;permission_if_right_does_not_exist&#39;] = true;
+</pre></div>
+</div>
+<p>Vous pouvez maintenant accéder à vos formulaires par le menu.</p>
+</div>
+<div class="section" id="menu">
+<h2>Menu<a class="headerlink" href="utiliser_generateur.html#menu" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>Application -&gt; Courrier</strong></p>
+<p>Cette opération affiche la table courrier :</p>
+<img alt="../_images/utilisation_3.png" src="../_images/utilisation_3.png" />
+<p>On accéde en appuyant sur <strong>+</strong> au formulaire d’insertion où les champs sont :</p>
+<ul class="simple">
+<li>la date du courrier avec calendrier,</li>
+<li>l’objet du courrier dans un champ textarea,</li>
+<li>deux contrôles «&nbsp;select&nbsp;» pour le service et l emetteur.</li>
+</ul>
+<blockquote>
+<div><img alt="../_images/utilisation_4.png" src="../_images/utilisation_4.png" />
+</div></blockquote>
+<p><strong>Paramétrage -&gt; Emetteur</strong></p>
+<p>Cette operation affiche la table emetteur :</p>
+<img alt="../_images/utilisation_5.png" src="../_images/utilisation_5.png" />
+<p>En appuyant sur <strong>+</strong>, on accède à la saisie.</p>
+<p>L’onglet courrier est inactif tant que l’emetteur n’est pas saisi et validé.</p>
+<img alt="../_images/utilisation_6.png" src="../_images/utilisation_6.png" />
+<p><strong>Paramétrage -&gt; Service</strong></p>
+<p>Cette opération affiche la table service :</p>
+<img alt="../_images/utilisation_7.png" src="../_images/utilisation_7.png" />
+<p>En appuyant sur <strong>+</strong>, on accède à la saisie.</p>
+<p>L’onglet courrier est inactif tant que le service n’est pas saisi.</p>
+<img alt="../_images/utilisation_8.png" src="../_images/utilisation_8.png" />
+<p>Vous pouvez accéder aux éditions et requêtes mémorisées :</p>
+<p><strong>Export -&gt; Edition</strong></p>
+<p>Cet option affiche l’ensemble des éditions pdf :</p>
+<img alt="../_images/utilisation_9.png" src="../_images/utilisation_9.png" />
+<p>Pour en savoir plus voir <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/edition.html#edition"><span class="std std-ref">Module “Édition”</span></a></p>
+<p><strong>Export -&gt; Requêtes Mémorisées</strong></p>
+<p>Cette option affiche les requêtes mémorisées :</p>
+<img alt="../_images/utilisation_10.png" src="../_images/utilisation_10.png" />
+<p>Pour en savoir plus voir <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/reqmo.html#reqmo"><span class="std std-ref">Module “Reqmo”</span></a></p>
+<p>Vous pouvez accéder aux éditions grâce à l’icône d’imprimante dans les pages de
+listings des courriers, services et émetteurs.</p>
+<p>Vous pouvez accéder au fichiers d’import :</p>
+<p><strong>Administration -&gt; Import</strong></p>
+<p>Cette option affiche les scripts d’imports :</p>
+<img alt="../_images/utilisation_11.png" src="../_images/utilisation_11.png" />
+<p>Pour en savoir plus voir <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/import.html#import"><span class="std std-ref">Module “Import”</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="personnaliser.html" class="btn btn-neutral float-right" title="Personnaliser son application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="creer_base.html" class="btn btn-neutral float-left" title="Créer la base de données" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004-2019, openMairie
+      
+        <span class="commit">
+          Revision <code>2d74cb2e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 4.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.10/">4.10</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.9/">4.9</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.8/">4.8</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.7/">4.7</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.6/">4.6</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.5/">4.5</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.4/">4.4</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.2/">4.2</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/pdf/">pdf</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/htmlzip/">html</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/epub/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="https://readthedocs.org/projects/omframework/?fromdocs=omframework">Project Home</a>
+          </dd>
+          <dd>
+            <a href="https://readthedocs.org/builds/omframework/?fromdocs=omframework">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

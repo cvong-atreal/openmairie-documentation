@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modifier la base et regénérer &mdash; openMairie Framework 4.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/genindex.html" />
+    <link rel="search" title="Recherche" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" />
+    <link rel="next" title="Créer ses états" href="utiliser_assistant.html" />
+    <link rel="prev" title="Personnaliser son application" href="personnaliser.html" /> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-09-13T12:58:55Z", "builder": "sphinx", "canonical_url": null, "commit": "2d74cb2e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "fr", "page": "tutorial/modifier_base", "programming_language": "py", "project": "omframework", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-55505927-1", "version": "4.11"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" class="icon icon-home"> openMairie Framework 4.11
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                4.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/installation/index.html">Prérequis et installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutoriel - Créer une application</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="creer_base.html">Créer la base de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_generateur.html">Créer les formulaires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="personnaliser.html">Personnaliser son application</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="modifier_base.html#">Modifier la base et regénérer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modifier_base.html#rajouter-un-champ-registre-dans-courrier">Rajouter un champ registre dans courrier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifier_base.html#rajouter-l-adresse-dans-emetteur">Rajouter l’adresse dans emetteur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifier_base.html#ameliorer-la-presentation-du-formulaire-emetteur">Améliorer la présentation du formulaire emetteur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifier_base.html#les-surcharges-d-opencourrier">Les surcharges d’openCourrier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_assistant.html">Créer ses états</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utiliser_tests.html">Créer ses tests</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/index.html">Manuel d’usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/index.html">Manuel de référence</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tests_ci/index.html">Tests et Intégration Continue</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/upgrades/index.html">Historique &amp; Mises à niveau</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/rules/index.html">Règles</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tools/index.html">Outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">openMairie Framework 4.11</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutoriel - Créer une application</a> &raquo;</li>
+        
+      <li>Modifier la base et regénérer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://gitlab.com/openmairie/framework-openmairie-documentation/blob/4.9/source/tutorial/modifier_base.rst" class="fa fa-gitlab"> Edit on GitLab</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modifier-la-base-et-regenerer">
+<span id="modifier-base"></span><h1>Modifier la base et regénérer<a class="headerlink" href="modifier_base.html#modifier-la-base-et-regenerer" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le framework openMairie permet de modifier la base et prendre en
+compte ces modifications en regénérant les scripts <strong>sans</strong> mettre en péril
+la personnalisation que vous avez effectuée.</p>
+<p>Nous vous proposons de rajouter un champ <em>registre</em> dans la table <em>courrier</em>
+et de rajouter l’adresse dans la table <em>emetteur</em>.</p>
+<div class="section" id="rajouter-un-champ-registre-dans-courrier">
+<h2>Rajouter un champ registre dans courrier<a class="headerlink" href="modifier_base.html#rajouter-un-champ-registre-dans-courrier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est proposé de rajouter un champ <em>registre</em> dans le courrier dont le but
+est de stocker le numéro de registre du courrier sous la forme <em>annee_numero_d_ordre</em>.</p>
+<p>Nous allons d’abord créer un champ <em>registre</em> dans la table <em>courrier</em> de la manière suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">courrier</span> <span class="n">ADD</span> <span class="n">registre</span> <span class="n">VARCHAR</span><span class="p">(</span> <span class="mi">20</span> <span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>Vous devez regénérer votre application courrier dans l’option du menu <strong>Administration -&gt; Générateur -&gt; Courrier</strong>
+et laisser cochées les options par défaut :</p>
+<blockquote>
+<div><p>gen/obj/courrier.class.php</p>
+<p>gen/sql/pgsql/courrier.inc.php</p>
+</div></blockquote>
+<p>Validez l’opération.</p>
+<p>Vous pouvez remarquer, si vous allez sur le formulaire d’ajout, qu’il y a un nouveau champ <em>registre</em>. Votre personnalisation n’est pas affectée.</p>
+<p>Nous voulons que le numéro de registre se mette en ajout de manière automatique une fois le formulaire validé.</p>
+<p>Il faut donc surcharger les méthodes suivantes dans <em>obj/courrier.class.php</em> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// pour que registre ne soit pas modifiable
+
+function setType(&amp;$form,$maj) {
+    parent::setType($form,$maj);
+    $form-&gt;setType(&#39;registre&#39;, &#39;hiddenstatic&#39;);
+}
+
+// pour la mise à jour de la séquence avant l&#39;ajout de l enregistrement
+
+function triggerajouter($id,&amp;$db,$val,$DEBUG) {
+    //  prochain numero de registre
+    //  fonction DB pear
+    $temp= $db-&gt;nextId(&quot;registre&quot;);
+    // fabrication du numero annee_no_d_ordre
+    $temp= date(&#39;Y&#39;).&quot;-&quot;.$temp;
+    $this-&gt;valF[&#39;registre&#39;] = $temp;
+}
+</pre></div>
+</div>
+<p>Si vous souhaitez que registre apparaisse dans l’affichage de la table, vous
+devez aussi modifier la variable <em>champAffiche</em> de <em>sql/pgsql/courrier.inc</em> de la manière
+suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$champAffiche = array(
+    &#39;courrier.courrier as &quot;&#39;._(&quot;courrier&quot;).&#39;&quot;&#39;,
+    &#39;to_char(courrier.dateenvoi ,\&#39;DD/MM/YYYY\&#39;) as &quot;&#39;._(&quot;dateenvoi&quot;).&#39;&quot;&#39;,
+    &#39;concat(emetteur.nom,\&#39; \&#39;,emetteur.prenom) as &quot;&#39;._(&quot;emetteur&quot;).&#39;&quot;&#39;,
+    &#39;service.libelle as &quot;&#39;._(&quot;service&quot;).&#39;&quot;&#39;,
+    &#39;registre&#39;
+);
+</pre></div>
+</div>
+<p>Votre affichage de la table courrier est modifié.</p>
+</div>
+<div class="section" id="rajouter-l-adresse-dans-emetteur">
+<h2>Rajouter l’adresse dans emetteur<a class="headerlink" href="modifier_base.html#rajouter-l-adresse-dans-emetteur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il est proposé de rajouter l’adresse de l’emetteur à savoir : le libellé, le code postal et
+la ville.</p>
+<p>La requête est la suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="n">emetteur</span> <span class="n">ADD</span> <span class="n">adresse</span> <span class="n">VARCHAR</span><span class="p">(</span> <span class="mi">40</span> <span class="p">)</span> <span class="p">,</span>
+<span class="n">ADD</span> <span class="n">cp</span> <span class="n">VARCHAR</span><span class="p">(</span> <span class="mi">5</span> <span class="p">)</span> <span class="p">,</span>
+<span class="n">ADD</span> <span class="n">ville</span> <span class="n">VARCHAR</span><span class="p">(</span> <span class="mi">40</span> <span class="p">)</span> <span class="p">;</span>
+</pre></div>
+</div>
+<p>Vous devez regénérer votre application courrier en allant dans l’option du menu :
+administration -&gt; generateur -&gt; emetteur et laisser cochées les options par défaut :</p>
+<blockquote>
+<div><p>gen/obj/emetteur.class.php</p>
+<p>gen/sql/pgsql/emetteur.inc.php</p>
+</div></blockquote>
+<p>Validez l’opération.</p>
+<p>N’ayant pas modifié <em>sql/pgsql/emetteur.inc</em>, le framework fonctionne avec le code généré.</p>
+</div>
+<div class="section" id="ameliorer-la-presentation-du-formulaire-emetteur">
+<h2>Améliorer la présentation du formulaire emetteur<a class="headerlink" href="modifier_base.html#ameliorer-la-presentation-du-formulaire-emetteur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous pouvons continuer à améliorer les présentations de nos formulaires
+en utilisant les méthodes setGroupe() et setRegroupe() dans le script
+<em>obj/emetteur.class.php</em>.</p>
+<p>Il vous est proposé d’insérer dans votre script obj/emetteur.class.php
+le code suivant :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>function setLayout(&amp;$form, $maj) {
+
+    $form-&gt;setFieldset(&#39;nom&#39;,&#39;D&#39;,_(&#39;nom&#39;),&quot;collapsible&quot;);
+    $form-&gt;setFieldset(&#39;prenom&#39;,&#39;F&#39;);
+
+    $form-&gt;setFieldset(&#39;adresse&#39;,&#39;D&#39;,_(&#39;adresse&#39;),&quot;startClosed&quot;);
+    $form-&gt;setFieldset(&#39;ville&#39;,&#39;F&#39;);
+}
+</pre></div>
+</div>
+<p>Le fieldset nom est affiché par défaut, pas celui de l’adresse :</p>
+<img alt="../_images/utilisation_28.png" src="../_images/utilisation_28.png" />
+<p>Vos formulaires sont maintenant au point.</p>
+<p>Le paragraphe suivant vous indique les surcharges d’openCourrier et d’openCimetiere que vous
+pouvez intégrer dans votre exemple, maintenant que vous avez la méthode.</p>
+</div>
+<div class="section" id="les-surcharges-d-opencourrier">
+<h2>Les surcharges d’openCourrier<a class="headerlink" href="modifier_base.html#les-surcharges-d-opencourrier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez utiliser openCourrier qui est téléchargeable au lien suivant :</p>
+<p><a class="reference external" href="http://www.adullact.net/frs/?group_id=297">http://www.adullact.net/frs/?group_id=297</a></p>
+<p>Si les surcharges qui ont été faites dans notre exemple sont celles d’openCourrier, il y a
+d’autre surcharges dans le script <em>courrier.class.php</em> d’openCimetiere  :</p>
+<p>Les méthodes setLib, setGroupe et setRegroupe permettent <strong>une présentation
+en fieldset</strong>  du courrier (utilisation des champs vide 1 à 5 voir <em>sql/pgsql/courrier.form.inc</em>).</p>
+<p>Il y a d’autres objets métier qui ont des surcharges intéressantes, par exemple
+l’objet <em>obj/dossier.class.php</em> où vous avez un upload pour télécharger des
+fichiers.</p>
+<p>Vous pouvez regarder également l’application openCourrier mais attention à la base de données qui est en MySQL :</p>
+<blockquote>
+<div><ul>
+<li><p class="first">openCourrier fonctionne avec des restrictions d’accès par service et les méthodes de login ont été modifiées dans <em>obj/utils.class.php</em> ainsi qu’<em>utilisateur.class.php</em> qui a dans openCourrier un champ service.</p>
+</li>
+<li><p class="first">l’objet <em>obj/tachenonsolde.class.php</em> est un exemple de surcharge de <em>tache.class.php</em> qui affiche que les tâches non soldées</p>
+</li>
+<li><p class="first">vous pouvez aussi regarder deux scripts de traitement :</p>
+<blockquote>
+<div><ul class="simple">
+<li>trt/num_registre.php qui remet à 0 le numéro de registre</li>
+<li>trt/archivage.php qui tranfere en archive les courriers avant une date</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Vous avez également des détails sur les traitements dans le chapitre <em>framework/util</em>
+notament sur la mise à jour du registre.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utiliser_assistant.html" class="btn btn-neutral float-right" title="Créer ses états" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="personnaliser.html" class="btn btn-neutral float-left" title="Personnaliser son application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004-2019, openMairie
+      
+        <span class="commit">
+          Revision <code>2d74cb2e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 4.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.10/">4.10</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.9/">4.9</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.8/">4.8</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.7/">4.7</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.6/">4.6</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.5/">4.5</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.4/">4.4</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.2/">4.2</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/pdf/">pdf</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/htmlzip/">html</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/epub/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="https://readthedocs.org/projects/omframework/?fromdocs=omframework">Project Home</a>
+          </dd>
+          <dd>
+            <a href="https://readthedocs.org/builds/omframework/?fromdocs=omframework">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

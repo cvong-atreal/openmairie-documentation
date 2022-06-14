@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prérequis et installation &mdash; openMairie Framework 4.11 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/genindex.html" />
+    <link rel="search" title="Recherche" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" />
+    <link rel="next" title="Tutoriel - Créer une application" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tutorial/index.html" />
+    <link rel="prev" title="openMairie Framework 4.9 documentation" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" /> 
+
+<!-- RTD Extra Head -->
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="application/json" id="READTHEDOCS_DATA">{"ad_free": false, "api_host": "https://readthedocs.org", "build_date": "2021-09-13T12:58:53Z", "builder": "sphinx", "canonical_url": null, "commit": "2d74cb2e", "docroot": "/source/", "features": {"docsearch_disabled": false}, "global_analytics_code": "UA-17997319-1", "language": "fr", "page": "installation/index", "programming_language": "py", "project": "omframework", "proxied_api_host": "/_", "source_suffix": ".rst", "subprojects": {}, "theme": "sphinx_rtd_theme", "user_analytics_code": "UA-55505927-1", "version": "4.11"}</script>
+
+<!--
+Using this variable directly instead of using `JSON.parse` is deprecated.
+The READTHEDOCS_DATA global variable will be removed in the future.
+-->
+<script type="text/javascript">
+READTHEDOCS_DATA = JSON.parse(document.getElementById('READTHEDOCS_DATA').innerHTML);
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" class="icon icon-home"> openMairie Framework 4.11
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                4.11
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="index.html#">Prérequis et installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#pre-requis">Pré-requis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#installation-des-fichiers-du-framework">Installation des fichiers du framework</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#telecharger-l-archive-zip">Télécharger l’archive zip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#decompresser-l-archive-zip-dans-le-repertoire-de-votre-serveur-web">Décompresser l’archive zip dans le répertoire de votre serveur web</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#creation-et-initialisation-de-la-base-de-donnees">Création et initialisation de la base de données</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#creer-la-base-de-donnees">Créer la base de données</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#initialiser-la-base-de-donnees">Initialiser la base de données</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#configuration-de-l-applicatif">Configuration de l’applicatif</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#creation-des-repertoires-dedies-au-stockage-des-donnees-de-l-applicatif">Création des répertoires dédiés au stockage des données de l’applicatif</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#positionner-les-permissions-necessaires-au-serveur-web">Positionner les permissions nécessaires au serveur web</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#configuration-de-la-connexion-a-la-base-de-donnees">Configuration de la connexion à la base de données</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#connexion-au-framework">Connexion au framework</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#ouverture-dans-le-navigateur">Ouverture dans le navigateur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#login">Login</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#en-cas-d-erreur">En cas d’erreur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#activer-le-mode-debug">Activer le mode debug</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tutorial/index.html">Tutoriel - Créer une application</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/usage/index.html">Manuel d’usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/index.html">Manuel de référence</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tests_ci/index.html">Tests et Intégration Continue</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/upgrades/index.html">Historique &amp; Mises à niveau</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/rules/index.html">Règles</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tools/index.html">Outils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">openMairie Framework 4.11</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html">Docs</a> &raquo;</li>
+        
+      <li>Prérequis et installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://gitlab.com/openmairie/framework-openmairie-documentation/blob/4.9/source/installation/index.rst" class="fa fa-gitlab"> Edit on GitLab</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prerequis-et-installation">
+<span id="installation"></span><h1><a class="toc-backref" href="index.html#id2">Prérequis et installation</a><a class="headerlink" href="index.html#prerequis-et-installation" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="contents topic" id="sommaire">
+<p class="topic-title">Sommaire</p>
+<ul class="simple">
+<li><a class="reference internal" href="index.html#prerequis-et-installation" id="id2">Prérequis et installation</a><ul>
+<li><a class="reference internal" href="index.html#pre-requis" id="id3">Pré-requis</a></li>
+<li><a class="reference internal" href="index.html#id1" id="id4">Installation</a><ul>
+<li><a class="reference internal" href="index.html#installation-des-fichiers-du-framework" id="id5">Installation des fichiers du framework</a><ul>
+<li><a class="reference internal" href="index.html#telecharger-l-archive-zip" id="id6">Télécharger l’archive zip</a></li>
+<li><a class="reference internal" href="index.html#decompresser-l-archive-zip-dans-le-repertoire-de-votre-serveur-web" id="id7">Décompresser l’archive zip dans le répertoire de votre serveur web</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="index.html#creation-et-initialisation-de-la-base-de-donnees" id="id8">Création et initialisation de la base de données</a><ul>
+<li><a class="reference internal" href="index.html#creer-la-base-de-donnees" id="id9">Créer la base de données</a></li>
+<li><a class="reference internal" href="index.html#initialiser-la-base-de-donnees" id="id10">Initialiser la base de données</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="index.html#configuration-de-l-applicatif" id="id11">Configuration de l’applicatif</a><ul>
+<li><a class="reference internal" href="index.html#creation-des-repertoires-dedies-au-stockage-des-donnees-de-l-applicatif" id="id12">Création des répertoires dédiés au stockage des données de l’applicatif</a></li>
+<li><a class="reference internal" href="index.html#positionner-les-permissions-necessaires-au-serveur-web" id="id13">Positionner les permissions nécessaires au serveur web</a></li>
+<li><a class="reference internal" href="index.html#configuration-de-la-connexion-a-la-base-de-donnees" id="id14">Configuration de la connexion à la base de données</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="index.html#connexion-au-framework" id="id15">Connexion au framework</a><ul>
+<li><a class="reference internal" href="index.html#ouverture-dans-le-navigateur" id="id16">Ouverture dans le navigateur</a></li>
+<li><a class="reference internal" href="index.html#login" id="id17">Login</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="index.html#en-cas-d-erreur" id="id18">En cas d’erreur</a><ul>
+<li><a class="reference internal" href="index.html#activer-le-mode-debug" id="id19">Activer le mode debug</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="pre-requis">
+<h2><a class="toc-backref" href="index.html#id3">Pré-requis</a><a class="headerlink" href="index.html#pre-requis" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous devez avoir installé :</p>
+<ul class="simple">
+<li>un serveur web (apache2, …)</li>
+<li>PHP (Versions testées : 5.6 &amp; 7.0) avec le module phpxx-mbstring</li>
+<li>le moteur de base de données PostGreSQL (Versions testées : 9.1 &gt; 9.6) avec
+l’extension PostGIS (Versions testées : 2.0 &gt; 2.3)</li>
+<li>la librairie XML : libxml &gt; 2.9.0</li>
+</ul>
+<p>Sous Windows, il est facile de trouver de la documentation pour l’installation
+de ces éléments en utilisant wamp (<a class="reference external" href="http://www.wampserver.com/">http://www.wampserver.com/</a>) par exemple.</p>
+<p>Sous Linux, il est facile de trouver de la documentation pour l’installation de
+ces éléments sur votre distribution.</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="index.html#id4">Installation</a><a class="headerlink" href="index.html#id1" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="installation-des-fichiers-du-framework">
+<h3><a class="toc-backref" href="index.html#id5">Installation des fichiers du framework</a><a class="headerlink" href="index.html#installation-des-fichiers-du-framework" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="telecharger-l-archive-zip">
+<h4><a class="toc-backref" href="index.html#id6">Télécharger l’archive zip</a><a class="headerlink" href="index.html#telecharger-l-archive-zip" title="Lien permanent vers ce titre">¶</a></h4>
+<p><a class="reference external" href="http://adullact.net/frs/?group_id=265">http://adullact.net/frs/?group_id=265</a></p>
+</div>
+<div class="section" id="decompresser-l-archive-zip-dans-le-repertoire-de-votre-serveur-web">
+<h4><a class="toc-backref" href="index.html#id7">Décompresser l’archive zip dans le répertoire de votre serveur web</a><a class="headerlink" href="index.html#decompresser-l-archive-zip-dans-le-repertoire-de-votre-serveur-web" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li>Exemple sous Windows dans wamp : <code class="docutils literal notranslate"><span class="pre">C:\wamp\www\framework-openmairie</span></code></li>
+<li>Exemple sous Linux avec debian : <code class="docutils literal notranslate"><span class="pre">/var/www/html/framework-openmairie</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="creation-et-initialisation-de-la-base-de-donnees">
+<h3><a class="toc-backref" href="index.html#id8">Création et initialisation de la base de données</a><a class="headerlink" href="index.html#creation-et-initialisation-de-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="creer-la-base-de-donnees">
+<h4><a class="toc-backref" href="index.html#id9">Créer la base de données</a><a class="headerlink" href="index.html#creer-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Il faut créer la base de données dans l’encodage UTF8. Par défaut la base de données s’appelle openexemple.</p>
+<p>Dans un environnement debian :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>createdb openexemple
+</pre></div>
+</div>
+</div>
+<div class="section" id="initialiser-la-base-de-donnees">
+<h4><a class="toc-backref" href="index.html#id10">Initialiser la base de données</a><a class="headerlink" href="index.html#initialiser-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Il faut initialiser les tables, les séquences et données de paramétrage grâce
+au script <code class="file docutils literal notranslate"><span class="pre">data/pgsql/install.sql</span></code>.</p>
+<p>Dans un environnement debian depuis le répertoire <code class="file docutils literal notranslate"><span class="pre">data/pgsql/</span></code> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql openexemple -f install.sql
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration-de-l-applicatif">
+<h3><a class="toc-backref" href="index.html#id11">Configuration de l’applicatif</a><a class="headerlink" href="index.html#configuration-de-l-applicatif" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="creation-des-repertoires-dedies-au-stockage-des-donnees-de-l-applicatif">
+<span id="creation-repertoire"></span><h4><a class="toc-backref" href="index.html#id12">Création des répertoires dédiés au stockage des données de l’applicatif</a><a class="headerlink" href="index.html#creation-des-repertoires-dedies-au-stockage-des-donnees-de-l-applicatif" title="Lien permanent vers ce titre">¶</a></h4>
+<p>A partir de la version 4.11, il faut créer les répertoires suivants :</p>
+<ul class="simple">
+<li>gen/dyn, gen/obj, gen/sql/pgsql</li>
+<li>obj</li>
+<li>sql/pgsql</li>
+<li>dyn</li>
+</ul>
+<p>Il est également nécessaire de créer les répertoires permettant de gérer le stockage des fichiers de logs, des fichiers temporaires et des fichiers stockés. L’arborescence à créer est décrite ci-après : <a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/arborescence.html#arborescence-repertoire-var"><span class="std std-ref">var/</span></a>.</p>
+<p><strong>Remarque</strong> : les chemins utilisés sont tous des chemins absolus.</p>
+</div>
+<div class="section" id="positionner-les-permissions-necessaires-au-serveur-web">
+<h4><a class="toc-backref" href="index.html#id13">Positionner les permissions nécessaires au serveur web</a><a class="headerlink" href="index.html#positionner-les-permissions-necessaires-au-serveur-web" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Dans un environnement debian :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown -R www-data:www-data /var/www/html/framework-openmairie
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-de-la-connexion-a-la-base-de-donnees">
+<h4><a class="toc-backref" href="index.html#id14">Configuration de la connexion à la base de données</a><a class="headerlink" href="index.html#configuration-de-la-connexion-a-la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h4>
+<p>La configuration se fait dans le fichier <code class="file docutils literal notranslate"><span class="pre">dyn/database.inc.php</span></code> (à créer depuis la version 4.11):</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="o">...</span>
+<span class="c1">// PostGreSQL</span>
+<span class="nv">$conn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s2">&quot;Framework openMairie&quot;</span><span class="p">,</span> <span class="c1">// Titre</span>
+    <span class="s2">&quot;pgsql&quot;</span><span class="p">,</span> <span class="c1">// Type de base</span>
+    <span class="s2">&quot;pgsql&quot;</span><span class="p">,</span> <span class="c1">// Type de base</span>
+    <span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="c1">// Login</span>
+    <span class="s2">&quot;postgres&quot;</span><span class="p">,</span> <span class="c1">// Mot de passe</span>
+    <span class="s2">&quot;tcp&quot;</span><span class="p">,</span> <span class="c1">// Protocole de connexion</span>
+    <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="c1">// Nom d&#39;hote</span>
+    <span class="s2">&quot;5432&quot;</span><span class="p">,</span> <span class="c1">// Port du serveur de la base de données</span>
+    <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// Socket</span>
+    <span class="s2">&quot;openexemple&quot;</span><span class="p">,</span> <span class="c1">// nom de la base</span>
+    <span class="s2">&quot;AAAA-MM-JJ&quot;</span><span class="p">,</span> <span class="c1">// Format de la date</span>
+    <span class="s2">&quot;framework_openmairie&quot;</span><span class="p">,</span> <span class="c1">// Nom du schéma</span>
+    <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// Préfixe</span>
+    <span class="k">null</span><span class="p">,</span> <span class="c1">// Paramétrage pour l&#39;annuaire LDAP</span>
+    <span class="k">null</span><span class="p">,</span> <span class="c1">// Paramétrage pour le serveur de mail</span>
+    <span class="k">null</span><span class="p">,</span> <span class="c1">// Paramétrage pour le stockage des fichiers</span>
+<span class="p">);</span>
+<span class="o">...</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Voir le paragraphe “<a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/initialisation_base_de_donnees.html#parametrage-connexion-base-de-donnees"><span class="std std-ref">Paramétrage de la connexion à la base de données</span></a>” pour plus de
+détails sur cette configuration.</p>
+</div>
+</div>
+</div>
+<div class="section" id="connexion-au-framework">
+<h2><a class="toc-backref" href="index.html#id15">Connexion au framework</a><a class="headerlink" href="index.html#connexion-au-framework" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="ouverture-dans-le-navigateur">
+<h3><a class="toc-backref" href="index.html#id16">Ouverture dans le navigateur</a><a class="headerlink" href="index.html#ouverture-dans-le-navigateur" title="Lien permanent vers ce titre">¶</a></h3>
+<p><a class="reference external" href="http://localhost/framework-openmairie/">http://localhost/framework-openmairie/</a></p>
+<p>“localhost” peut être remplacé par l’ip ou le nom de domaine du serveur.</p>
+</div>
+<div class="section" id="login">
+<h3><a class="toc-backref" href="index.html#id17">Login</a><a class="headerlink" href="index.html#login" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Utilisateur «&nbsp;administrateur&nbsp;» :</dt>
+<dd><ul class="first last">
+<li>identifiant : admin</li>
+<li>mot de passe : admin</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Le message de bienvenue doit être affiché «&nbsp;Votre session est maintenant ouverte.&nbsp;»</p>
+</div>
+</div>
+<div class="section" id="en-cas-d-erreur">
+<h2><a class="toc-backref" href="index.html#id18">En cas d’erreur</a><a class="headerlink" href="index.html#en-cas-d-erreur" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="activer-le-mode-debug">
+<h3><a class="toc-backref" href="index.html#id19">Activer le mode debug</a><a class="headerlink" href="index.html#activer-le-mode-debug" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il est possible d’activer le mode debug pour visualiser les messages d’erreur
+détaillés directement dans l’interface. Créer le fichier <code class="file docutils literal notranslate"><span class="pre">dyn/debug.inc.php</span></code>,
+(à créer s’il n’existe pas), il faut définir le niveau <strong>DEBUG</strong> à <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Voir le paragraphe “<a class="reference internal" href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/reference/parametrage.html#configuration-debug-inc"><span class="std std-ref">Le mode DEBUG</span></a>” pour plus de détails sur
+cette configuration.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/tutorial/index.html" class="btn btn-neutral float-right" title="Tutoriel - Créer une application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://openmairie.readthedocs.io/projects/omframework/fr/4.9/index.html" class="btn btn-neutral float-left" title="openMairie Framework 4.9 documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004-2019, openMairie
+      
+        <span class="commit">
+          Revision <code>2d74cb2e</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 4.11
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.10/">4.10</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.9/">4.9</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.8/">4.8</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.7/">4.7</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.6/">4.6</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.5/">4.5</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.4/">4.4</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/fr/4.2/">4.2</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/pdf/">pdf</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/htmlzip/">html</a></dd>
+        
+          <dd><a href="https://openmairie.readthedocs.io/_/downloads/omframework/fr/4.9/epub/">epub</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="https://readthedocs.org/projects/omframework/?fromdocs=omframework">Project Home</a>
+          </dd>
+          <dd>
+            <a href="https://readthedocs.org/builds/omframework/?fromdocs=omframework">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

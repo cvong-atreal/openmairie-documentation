@@ -1,0 +1,5 @@
+
+=> cvong = Christophe VOng <cvong@atreal.fr>
+=> Christophe Vong = nom complet du contributeur
+=> cvong@atreal.fr = mail référencé dans github
+vim ../authors-transform.txt
